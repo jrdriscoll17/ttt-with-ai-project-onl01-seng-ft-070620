@@ -34,9 +34,11 @@ class Game
     end
 
     def winner
-        if won?
-            current_player.token == "X" ? "O" : "X"
-        end
+      @board.cells[won?[0]] if won?
     end
 
+    def turn
+      input = gets.chomp
+      puts "Please enter a valid location: "
+    end
 end
